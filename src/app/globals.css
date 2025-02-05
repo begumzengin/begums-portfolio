@@ -2,20 +2,180 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Catellos';
+  src: url('/fonts/Catellos DEMO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #1a1819;
+  --foreground: #f5f5f4;
+  --accent: #544193;
+  --secondary: #1a1819;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Catellos', sans-serif;
+}
+
+.section-navbar {
+  background-image: url('/images/navbar_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section-primary {
+  background-color: var(--foreground);
+  color: var(--background);
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section-secondary {
+  background-color: var(--background);
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section-accent {
+  background-color: var(--accent);
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.scroll-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tooltip styles */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  margin-bottom: 0.5rem;
+}
+
+[data-tooltip]:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.font-catellos {
+  font-family: 'Catellos', sans-serif;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('/images/star_bullet.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
