@@ -13,7 +13,7 @@
 }
 
 :root {
-  --background: #1a1819;
+  --background: #282521;
   --foreground: #f5f5f4;
   --accent: #544193;
   --secondary: #1a1819;
@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-navbar {
-  background-image: url('/images/navbar_bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,11 +43,48 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.section-navbar::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  animation: blobAnimate 7s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate forwards;
+  filter: blur(80px);
+  z-index: -1;
+  background: linear-gradient(
+    47deg,
+    rgba(255, 88, 139, 1) 21%,
+    rgb(0 164 173) 67%,
+    rgba(118, 74, 166, 1) 81%
+  );
+}
+
+@keyframes blobAnimate {
+  0% {
+    translate: 40% -25%;
+    border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
+  }
+  50% {
+    translate: 0% 13%;
+    border-radius: 20% 71% 47% 70% / 81% 15% 22% 54%;
+    rotate: 41deg;
+    scale: 1.15;
+  }
+  100% {
+    translate: -45% 39%;
+    border-radius: 100% 75% 92% 74% / 60% 80% 30% 70%;
+    rotate: -60deg;
+    scale: 1.05;
+  }
 }
 
 .section-primary {
-  background-color: var(--foreground);
-  color: var(--background);
+  background-color: var(--background);
   height: 100vh;
   padding: 0;
   position: relative;
@@ -66,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-accent {
-  background-color: var(--accent);
+  background-color: var(--background);
   height: 100vh;
   padding: 0;
   position: relative;
