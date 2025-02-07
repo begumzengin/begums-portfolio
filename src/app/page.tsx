@@ -1,83 +1,50 @@
-"use client"
+"use client";
 
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
 
-    document.querySelectorAll('.scroll-section').forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#292521] text-foreground">
+    <div className="min-h-screen flex flex-col text-foreground relative overflow-hidden">
+      {/* Animated Blob */}
+      <div
+        className="absolute top-0 left-0 w-full h-full z-[-1] animated-blob"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+        }}
+      />
+
       {/* Navbar */}
-      <nav className="sticky section-navbar top-0 z-50 backdrop-blur-sm border-b border-black/[.08] dark:border-white/[.08]">
+      <nav className="sticky section-navbar top-0 z-50 dark:border-white/[.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14 items-center">
-            <div className="text-2xl font-catellos mr-20 text-foreground">begum's portfolio</div>
+            <div className="text-2xl font-catellos mr-20 text-foreground">
+              begum's portfolio
+            </div>
             <div className="hidden sm:flex space-x-8">
               <a href="#about" className="text-xl hover:text-accent/70 transition-colors">about</a>
               <a href="#education-experience" className="text-xl hover:text-accent/70 transition-colors">education & experience</a>
               <a href="#contact" className="text-xl hover:text-accent/70 transition-colors">contact</a>
             </div>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="sm:hidden p-2 hover:bg-foreground/5 rounded-lg transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
           </div>
-          {isMobileMenuOpen && (
-            <div className="sm:hidden absolute top-14 inset-x-0 p-2 bg-[#292521] border-b border-[#FFEDE1]/[.08]">
-              <div className="flex flex-col space-y-4 p-4">
-                <a
-                  href="#about"
-                  className="hover:text-foreground/70 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  about
-                </a>
-                <a
-                  href="#education-experience"
-                  className="hover:text-foreground/70 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  education & experience
-                </a>
-                <a
-                  href="#contact"
-                  className="hover:text-foreground/70 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  contact
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
+      {/* Sections */}
       <main className="flex-1">
-        {/* About Section */}
-        <section id="about" className="section-primary flex items-center px-4 sm:px-6 lg:px-8 scroll-section relative">
-          <div className="absolute bottom-8 right-8 flex gap-2">
+        <section id="about" className="section-primary flex items-center px-4 sm:px-6 lg:px-8 relative min-h-screen">
+        <div className="absolute bottom-8 right-8 flex gap-2">
           <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
@@ -114,22 +81,14 @@ export default function Home() {
                 </p>
               </div>
               <div className="relative h-[400px] w-[400px] mx-auto">
-                <Image
-                  src="/images/about_me.png"
-                  alt="Profile"
-                  priority
-                  width={400}
-                  height={400}
-                  className="object-contain"
-                />
+                photo
               </div>
             </div>
           </div>
         </section>
-
         {/* Education & Experience Section */}
-        <section id="education-experience" className="section-accent py-20 px-4 sm:px-6 lg:px-8 scroll-section relative">
-          <div className="absolute bottom-8 right-8 flex gap-2">
+        <section id="education-experience" className="section-accent py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen">
+        <div className="absolute bottom-8 right-8 flex gap-2">
             <button
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
@@ -153,7 +112,6 @@ export default function Home() {
           </div>
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-12">education & experience</h2>
-            
             <div className="mb-16">
               <h3 className="text-2xl font-bold mb-8">education</h3>
               <div className="bg-background/5 rounded-md p-6 space-y-8">
@@ -219,8 +177,8 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="section-secondary py-20 px-4 sm:px-6 lg:px-8 scroll-section relative">
-          <div className="absolute bottom-8 right-8 flex gap-2">
+        <section id="contact" className="section-secondary py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen">
+        <div className="absolute bottom-8 right-8 flex gap-2">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
