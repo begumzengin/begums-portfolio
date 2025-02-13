@@ -47,7 +47,7 @@ export default function Home() {
         <div className="absolute bottom-8 right-8 flex gap-2">
           <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
               aria-label="Scroll to top"
               data-tooltip="back to top"
             >
@@ -57,12 +57,7 @@ export default function Home() {
             </button>
             <button
               onClick={() => document.getElementById('education-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
-              style={{
-                border: '1px solid #0000',
-                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
-                animation: '8s rotate linear infinite'
-              }}
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
               aria-label="Scroll to next section"
               data-tooltip="experience"
             >
@@ -96,12 +91,7 @@ export default function Home() {
         <div className="absolute bottom-8 right-8 flex gap-2">
             <button
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
-              style={{
-                border: '1px solid #0000',
-                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
-                animation: '8s rotate linear infinite'
-              }}
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
               aria-label="Scroll to previous section"
               data-tooltip="about me"
             >
@@ -111,12 +101,7 @@ export default function Home() {
             </button>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
-              style={{
-                border: '1px solid #0000',
-                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
-                animation: '8s rotate linear infinite'
-              }}
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
               aria-label="Scroll to next section"
               data-tooltip="contact"
             >
@@ -140,8 +125,7 @@ export default function Home() {
                       className="mt-1"
                     />
                     <div>
-                      <p className="text-foreground/70 text-md mb-2">2019-2023</p>
-                      <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-2">
                         <h3 className="font-semibold text-xl">baskent university</h3>
                         <div className="relative cursor-pointer" onMouseEnter={() => {
                           const modal = document.getElementById('gallery-modal');
@@ -210,7 +194,7 @@ export default function Home() {
                         </div>
                       </div>
                       <span className="flex mb-4">
-                        <p className="text-foreground/80 text-md">bachelor of science in computer engineering</p>
+                        <p className="text-foreground/80 text-md">i graduated with a <b>bachelor of science in computer engineering</b> in 2023</p>
                       </span>
                       <div className="ml-4 pl-4 mt-6">
                         <div className="flex items-center gap-2 mb-4">
@@ -267,9 +251,8 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-8">experience</h3>
                 <div className="bg-background/5 rounded-md p-6">
                   <h3 className="font-semibold text-xl mb-2">frontend developer</h3>
-                  <p className="text-foreground/70">vbt software - ankara, türkiye</p>
-                  <p className="text-foreground/70">august 2023 - present</p>
                   <ul className="mt-4 list-disc list-inside space-y-2 text-justify">
+                    <li>i've been working as a frontend developer since august 2023, building and optimizing web applications.</li>
                     <li>i'm developing web apps for erp projects, focusing on creating efficient and user-friendly solutions.</li>
                     <li>i'm taking the lead role in the b2b module, making sure everything runs smoothly, from frontend components to backend integration.</li>
                     <li>i'm deeply involved in state management, optimizing performance, and ensuring seamless communication between frontend and rest apis.</li>
@@ -286,12 +269,7 @@ export default function Home() {
         <div className="absolute bottom-8 right-8 flex gap-2">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
-              style={{
-                border: '1px solid #0000',
-                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
-                animation: '8s rotate linear infinite'
-              }}
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
               aria-label="Scroll to top"
               data-tooltip="back to top"
             >
