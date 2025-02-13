@@ -34,7 +34,7 @@ export default function Home() {
             </div>
             <div className="hidden sm:flex space-x-8">
               <a href="#about" className="text-xl hover:text-accent/70 transition-colors">about</a>
-              <a href="#education-experience" className="text-xl hover:text-accent/70 transition-colors">education & experience</a>
+              <a href="#education-experience" className="text-xl hover:text-accent/70 transition-colors">experience</a>
               <a href="#contact" className="text-xl hover:text-accent/70 transition-colors">contact</a>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function Home() {
         <div className="absolute bottom-8 right-8 flex gap-2">
           <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
               aria-label="Scroll to top"
               data-tooltip="back to top"
             >
@@ -57,9 +57,14 @@ export default function Home() {
             </button>
             <button
               onClick={() => document.getElementById('education-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
+              style={{
+                border: '1px solid #0000',
+                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
+                animation: '8s rotate linear infinite'
+              }}
               aria-label="Scroll to next section"
-              data-tooltip="education & experience"
+              data-tooltip="experience"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -71,13 +76,13 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="space-y-4">
                 <p className="text-lg text-foreground/80">
-                  Hi, I'm Begüm Zengin! I’m a passionate Frontend Developer with a strong focus on building scalable, efficient, and user-friendly web applications.
+                  hi, i'm begüm zengin! i’m a passionate frontend developer with a strong focus on building scalable, efficient, and user-friendly web applications.
                 </p>
                 <p className="text-lg">
-                With hands-on experience in Angular, React, and modern frontend technologies, I enjoy turning complex requirements into intuitive and responsive interfaces.
+                with hands-on experience in angular, react, and modern frontend technologies, i enjoy turning complex requirements into intuitive and responsive interfaces.
                 </p>
                 <p className="text-lg text-foreground/80">
-                I thrive in collaborative environments, enjoy problem-solving, and continuously seek opportunities to learn and adapt to new technologies.
+                i thrive in collaborative environments, enjoy problem-solving, and continuously seek opportunities to learn and adapt to new technologies.
                 </p>
               </div>
               <div className="relative h-[400px] w-[400px] mx-auto">
@@ -86,12 +91,17 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Education & Experience Section */}
+        {/* Experience Section */}
         <section id="education-experience" className="section-accent py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen">
         <div className="absolute bottom-8 right-8 flex gap-2">
             <button
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
+              style={{
+                border: '1px solid #0000',
+                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
+                animation: '8s rotate linear infinite'
+              }}
               aria-label="Scroll to previous section"
               data-tooltip="about me"
             >
@@ -101,7 +111,12 @@ export default function Home() {
             </button>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
+              style={{
+                border: '1px solid #0000',
+                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
+                animation: '8s rotate linear infinite'
+              }}
               aria-label="Scroll to next section"
               data-tooltip="contact"
             >
@@ -111,68 +126,158 @@ export default function Home() {
             </button>
           </div>
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12">education & experience</h2>
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-8">education</h3>
-              <div className="bg-background/5 rounded-md p-6 space-y-8">
-                <div className="flex items-start gap-4">
-                  <Image
-                    src="/images/star_bullet.png"
-                    alt="Star bullet"
-                    width={16}
-                    height={16}
-                    className="mt-1"
-                  />
-                  <div>
-                    <p className="text-foreground/70 mb-2">2019-2023</p>
-                    <h3 className="font-semibold text-xl mb-2">Baskent University</h3>
-                    <p className="text-foreground/80">Bachelor of Science in Computer Engineering</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Image
-                    src="/images/star_bullet.png"
-                    alt="Star bullet"
-                    width={16}
-                    height={16}
-                    className="mt-1"
-                  />
-                  <div>
-                    <p className="text-foreground/70 mb-2">2023</p>
-                    <h3 className="font-semibold text-xl mb-2">Graduation Project</h3>
-                    <p className="text-foreground/80">I led the frontend development of the senior project "ParsyBot: Virtual University Assistant", an intelligent chatbot funded by the TÜBİTAK University Students Research Projects Support Program.</p>
-                    <p className="text-foreground/80">The project was presented and its findings were published at the 18th International Conference on Semantic Computing (ICSC'18), showcasing innovation, technical expertise, and real-world impact.</p>
-                    <div className="flex gap-4 mt-4">
-                      <a href="https://ieeexplore.ieee.org/document/10475599" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground/70 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                            <path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm9 17.1L12 22.5 3 17.1V6.9L12 1.5l9 5.4v10.2zM12 15c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3z"/>
-                          </svg>
-                          <span>IEEE publication</span>
-                        </a>
-                        <a href="https://github.com/begumzengin/ParsyBot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground/70 transition-colors">
+            <h2 className="text-3xl font-bold mb-12">experience</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-8">education</h3>
+                <div className="bg-background/5 rounded-md p-6 space-y-8">
+                  <div className="flex items-start gap-4">
+                    <Image
+                      src="/images/star_bullet.png"
+                      alt="Star bullet"
+                      width={16}
+                      height={16}
+                      className="mt-1"
+                    />
+                    <div>
+                      <p className="text-foreground/70 text-md mb-2">2019-2023</p>
+                      <div className="flex items-center gap-2 mb-2">
+                        <h3 className="font-semibold text-xl">baskent university</h3>
+                        <div className="relative cursor-pointer" onMouseEnter={() => {
+                          const modal = document.getElementById('gallery-modal');
+                          const modalContent = modal?.querySelector('.bg-background\\95');
+                          const images = modal?.querySelectorAll('.transform');
+                          
+                          if (modal) {
+                            modal.style.display = 'flex';
+                            setTimeout(() => {
+                              modal.style.opacity = '1';
+                              if (modalContent) modalContent.classList.add('scale-100');
+                              
+                              images?.forEach((img, index) => {
+                                setTimeout(() => {
+                                  (img as HTMLElement).style.opacity = '1';
+                                  (img as HTMLElement).style.transform = `translateY(0) rotate(${Math.random() * 10 - 5}deg)`;
+                                }, index * 150);
+                              });
+                            }, 50);
+                          }
+                        }}>
+                          <Image
+                            src="/images/gallery.png"
+                            alt="Gallery icon"
+                            width={24}
+                            height={24}
+                          />
+                          <div id="gallery-modal" 
+                              className="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] transition-opacity duration-300 opacity-0"
+                              onClick={() => {
+                                const modal = document.getElementById('gallery-modal');
+                                if (modal) {
+                                  modal.style.opacity = '0';
+                                  setTimeout(() => {
+                                    modal.style.display = 'none';
+                                  }, 300);
+                                }
+                              }}
+                              style={{ backdropFilter: 'blur(5px)' }}>
+                            <div className="relative bg-background/95 p-8 transform transition-all duration-500 scale-0" 
+                                 onClick={(e) => e.stopPropagation()}>
+                              <div className="flex gap-8 p-4">
+                                <div className="relative transform transition-all duration-500 opacity-0 translate-y-full rotate-0 hover:scale-105">
+                                  <Image
+                                    src="/images/eng_faculty.jpg"
+                                    alt="Gallery image 1"
+                                    width={300}
+                                    height={300}
+                                    className="shadow-lg rounded-lg"
+                                  />
+                                  <p className="text-center mt-4 text-sm text-foreground/80">me thriving @ baskent university engineering faculty</p>
+                                </div>
+                                <div className="relative transform transition-all duration-500 opacity-0 translate-y-full rotate-0 hover:scale-105">
+                                  <Image
+                                    src="/images/parsybot.jpg"
+                                    alt="Gallery image 2"
+                                    width={300}
+                                    height={300}
+                                    className="shadow-lg rounded-lg"
+                                  />
+                                  <p className="text-center mt-4 text-sm text-foreground/80">presenting parsybot @ the graduation projects fair</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <span className="flex mb-4">
+                        <p className="text-foreground/80 text-md">bachelor of science in computer engineering</p>
+                      </span>
+                      <div className="ml-4 pl-4 mt-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Image
+                            src="/images/star_bullet.png"
+                            alt="Star bullet"
+                            width={16}
+                            height={16}
+                          />
+                          <h4 className="font-semibold text-lg">graduation project</h4>
+                        </div>
+                        <p className="text-foreground/80 mb-4 text-justify">
+                          <span>i led the frontend development of the senior project "parsybot: virtual university assistant", an intelligent chatbot funded by the </span>
+                          <span className="inline-block px-3 py-1 rounded-md frosted-glass text-sm relative group cursor-help">
+                            <span>TÜBİTAK 2209-A university students research projects support program</span>
+                            <span className="invisible text-justify group-hover:visible absolute left-1/2 bottom-full mb-2 -translate-x-1/2 w-80 p-4 rounded-md bg-[#282521]  z-[100] text-sm shadow-lg">
+                              TÜBİTAK 2209-A is a funding program by the scientific and technological research council of türkiye (TÜBİTAK) aimed at supporting undergraduate students in conducting scientific research projects.
+                              the program encourages students to develop research skills, contribute to their fields, and gain hands-on experience in scientific studies.
+                              it provides financial support to eligible projects, helping students enhance their academic and professional competencies.
+                            </span>
+                          </span>
+                        </p>
+
+                        <p className="text-foreground/80 mb-6 text-justify">
+                          <span>parsybot was presented and its findings were published at the </span>
+                          <span className="inline-block px-3 py-1 rounded-md frosted-glass text-sm relative group cursor-help">
+                            <span>18th international conference on semantic computing (ICSC'18)</span>
+                            <span className="invisible text-justify group-hover:visible absolute left-1/2 bottom-full mb-2 -translate-x-1/2 w-80 p-4 rounded-md bg-[#282521] z-[100] text-sm shadow-lg">
+                              ICSC is a premier international forum for researchers and practitioners to present updated research findings, share innovative experiences and discuss trending technologies in semantic computing, an emerging paradigm that comprises techniques and technologies for computing with words and expressions of natural languages.
+                            </span>
+                          </span>
+                          <span>, showcasing innovation, technical expertise, and real-world impact.</span>
+                        </p>
+                        <div className="flex gap-6 mt-2">
+                          <a href="https://ieeexplore.ieee.org/document/10475599" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground/70 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                              <path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm9 17.1L12 22.5 3 17.1V6.9L12 1.5l9 5.4v10.2zM12 15c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3z"/>
+                            </svg>
+                            <span>IEEE publication</span>
+                          </a>
+                          <a href="https://github.com/begumzengin/ParsyBot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground/70 transition-colors">
                           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                          </svg>
-                          <span>github repository</span>
-                        </a>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                            <span>github repository</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8">experience</h3>
-              <div className="rounded-md p-6">
-                <h3 className="font-semibold text-xl mb-2">Frontend Developer</h3>
-                <p className="text-foreground/70">VBT Yazılım - Ankara, Turkey</p>
-                <p className="text-foreground/70">August 2023 - Present</p>
-                <ul className="mt-4 list-disc list-inside space-y-2">
-                  <li>I contributed to the development of web applications using Angular, NgRx, Nx Workspace, and PrimeNG, focusing on building modular and scalable UI components.</li>
-                  <li>I worked extensively on state management, frontend-backend integration with REST APIs, and optimizing application performance.</li>
-                  <li>I collaborated with cross-functional teams to ensure smooth development workflows and maintainability.</li>
-                </ul>
+              <div>
+                <h3 className="text-2xl font-bold mb-8">experience</h3>
+                <div className="bg-background/5 rounded-md p-6">
+                  <h3 className="font-semibold text-xl mb-2">frontend developer</h3>
+                  <p className="text-foreground/70">vbt software - ankara, türkiye</p>
+                  <p className="text-foreground/70">august 2023 - present</p>
+                  <ul className="mt-4 list-disc list-inside space-y-2 text-justify">
+                    <li>i'm developing web apps for erp projects, focusing on creating efficient and user-friendly solutions.</li>
+                    <li>i'm taking the lead role in the b2b module, making sure everything runs smoothly, from frontend components to backend integration.</li>
+                    <li>i'm deeply involved in state management, optimizing performance, and ensuring seamless communication between frontend and rest apis.</li>
+                    <li>i'm working closely with different teams to maintain a smooth development flow and deliver scalable, maintainable solutions.</li>
+                  </ul>
+                </div>
               </div>
+            </div>
           </div>
         </section>
 
@@ -181,7 +286,12 @@ export default function Home() {
         <div className="absolute bottom-8 right-8 flex gap-2">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors relative"
+              style={{
+                border: '1px solid #0000',
+                background: 'linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle), #070707, #687aff) border-box',
+                animation: '8s rotate linear infinite'
+              }}
               aria-label="Scroll to top"
               data-tooltip="back to top"
             >
@@ -205,7 +315,7 @@ export default function Home() {
                 </a>
                 <a href="https://github.com/begumzengin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground/70 transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                   </svg>
                   github
                 </a>

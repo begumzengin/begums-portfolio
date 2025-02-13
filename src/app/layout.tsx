@@ -24,10 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}>
         {children}
+        <footer className="w-full py-4 text-center text-sm text-foreground/60">
+          begüm zengin © 2025
+        </footer>
       </body>
     </html>
   );

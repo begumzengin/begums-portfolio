@@ -5,8 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @font-face {
-  font-family: 'Catellos';
-  src: url('/fonts/Catellos DEMO.ttf') format('truetype');
+  font-family: 'Joyride';
+  src: url('/fonts/Joyride W05 STD.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -29,6 +29,29 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   position: relative;
+}
+
+.tooltip-border {
+  border: 1px solid #0000;
+  border-radius: 6px;
+  background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #070707,
+        #687aff
+      ) border-box;
+  animation: 8s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .animated-blob {
@@ -66,7 +89,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Catellos', sans-serif;
+  font-family: 'Joyride', sans-serif;
 }
 
 @keyframes blobAnimate {
@@ -102,7 +125,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
+.frosted-glass {
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+}
 
 
 
@@ -219,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .font-catellos {
-  font-family: 'Catellos', sans-serif;
+  font-family: 'Joyride', sans-serif;
 }
 
 li {
