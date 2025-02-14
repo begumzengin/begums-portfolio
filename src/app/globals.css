@@ -126,8 +126,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .frosted-glass {
-  background-color: rgba(255, 255, 255, .15);  
-  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -162,6 +165,39 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.content-transition-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.content-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.section-accent {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-accent .transition-all {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -271,9 +307,13 @@ li::before {
 
 .section-primary,
 .section-secondary,
-.section-accent {
-  position: relative;
+.section-accent,
+.section-navbar {
   min-height: 100vh;
+  padding: 20rem 0;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
