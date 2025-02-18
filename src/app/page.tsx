@@ -39,7 +39,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14 items-center">
             <div className="text-2xl font-catellos mr-20 text-foreground">
-              begum's portfolio
+              begüm zengin
             </div>
             <div className="hidden sm:flex space-x-8">
               <a href="#about" className="text-xl transition-all duration-300 ease-in-out transform hover:scale-105">about</a>
@@ -76,21 +76,22 @@ export default function Home() {
             </button>
           </div>
           <div className="max-w-7xl mx-auto w-full">
-            <h2 className="text-3xl font-bold mb-8">about me</h2>
+            
             <div className="grid md:grid-cols-2 gap-10 items-center">
+            <h2 className="text-3xl font-bold mb-8">about me</h2>
               <div className="space-y-4 text-justify">
                 <p className="text-lg text-foreground/80">
-                  hi, i'm begüm zengin! i’m a passionate frontend developer with a strong focus on building scalable, efficient, and user-friendly web applications.
+                  hi, i'm begüm zengin! i’m a passionate frontend developer with a strong focus on building efficient and user-friendly web applications.
                 </p>
                 <p className="text-lg">
                 with hands-on experience in angular, react, and modern frontend technologies, i enjoy turning complex requirements into intuitive and responsive interfaces.
                 </p>
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg">
+                i'm fascinated by design and aspire to create amazing user interface designs.
+                </p>
+                <p className="text-lg">
                 i thrive in collaborative environments, enjoy problem-solving, and continuously seek opportunities to learn and adapt to new technologies.
                 </p>
-              </div>
-              <div className="relative h-[400px] w-[400px] mx-auto">
-                photo
               </div>
             </div>
           </div>
@@ -99,9 +100,9 @@ export default function Home() {
         <section id="education-experience" className="section-accent py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen">
             <div className="absolute bottom-8 right-8 flex gap-2">
             <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                 className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
-                aria-label="Scroll to top"
+                aria-label="Scroll to about section"
                 data-tooltip="about me"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -109,9 +110,9 @@ export default function Home() {
                 </svg>
               </button>
               <button
-                onClick={() => document.getElementById('education-experience')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
-                aria-label="Scroll to next section"
+                aria-label="Scroll to contact section"
                 data-tooltip="contact"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -288,7 +289,7 @@ export default function Home() {
                         <ul className="mt-4 list-disc list-inside space-y-2 text-justify">
                           <li>i've been working as a frontend developer since august 2023, building and optimizing web applications.</li>
                           <li>i'm developing web apps for erp projects, focusing on creating efficient and user-friendly solutions.</li>
-                          <li>i'm taking the lead role in the b2b module, making sure everything runs smoothly, from frontend components to backend integration.</li>
+                          <li>i'm taking the lead frontend developer role in the b2b module, making sure everything runs smoothly, from frontend components to backend integration.</li>
                           <li>i'm deeply involved in state management, optimizing performance, and ensuring seamless communication between frontend and rest apis.</li>
                           <li>i'm working closely with different teams to maintain a smooth development flow and deliver scalable, maintainable solutions.</li>
                         </ul>
