@@ -31,6 +31,29 @@ body {
   position: relative;
 }
 
+/* Mobile-first typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Joyride', sans-serif;
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4, h5, h6 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 0.875rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+}
+
 .tooltip-border {
   border: 1px solid #0000;
   border-radius: 6px;
@@ -160,11 +183,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-accent {
-  height: 100vh;
+  min-height: 100vh;
   padding: 0;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .content-transition-enter {
