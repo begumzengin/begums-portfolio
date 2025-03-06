@@ -9,21 +9,31 @@ export default function Home() {
   const [selectedSection, setSelectedSection] = useState<'education' | 'experience' | null>(null);
 
   useEffect(() => {
+    let ticking = false;
+  
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-      
-      const experienceSection = document.getElementById('education-experience');
-      if (experienceSection) {
-        const rect = experienceSection.getBoundingClientRect();
-        if (rect.top > window.innerHeight || rect.bottom < 0) {
-          setSelectedSection(null);
-        }
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          
+          const experienceSection = document.getElementById('education-experience');
+          if (experienceSection) {
+            const rect = experienceSection.getBoundingClientRect();
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+              setSelectedSection(null);
+            }
+          }
+  
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   return (
     <div className="min-h-screen flex flex-col text-foreground relative overflow-hidden">

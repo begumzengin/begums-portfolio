@@ -146,38 +146,37 @@ export default function EChart({ style, className }: EChartProps) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
+  
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && chartRef.current !== null && !chartInstance.current) {
           chartInstance.current = init(chartRef.current);
           chartInstance.current.setOption(experienceChartOption(isMobile));
-
+  
           const resizeChart = () => {
-            chartInstance.current?.resize();
-            chartInstance.current?.setOption(experienceChartOption(isMobile));
+            chartInstance.current?.resize(); // 🔄 Yalnızca `resize`
           };
-          
+  
           window.addEventListener('resize', resizeChart);
           return () => window.removeEventListener('resize', resizeChart);
         }
       },
       {
-        threshold: 0.1
+        threshold: 0.5, // 🔄 Daha az tetiklenme
       }
     );
-
+  
     if (chartRef.current) {
       observer.observe(chartRef.current);
     }
-
+  
     return () => {
       if (chartRef.current) {
         observer.unobserve(chartRef.current);
       }
       chartInstance.current?.dispose();
     };
-  }, [isMobile]);
+  }, [isMobile]);  
 
   return (
     <div
