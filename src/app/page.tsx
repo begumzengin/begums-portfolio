@@ -65,26 +65,29 @@ export default function Home() {
       <main className="flex-1">
         <section id="about" className="section-primary flex items-center px-4 sm:px-6 lg:px-8 relative min-h-screen">
         <div className="absolute bottom-8 right-8 flex gap-2">
-          <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
-              aria-label="Scroll to top"
-              data-tooltip="back to top"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-              </svg>
-            </button>
+          <div style={{ bottom: 'calc(env(safe-area-inset-bottom) + 1rem)' }}>
             <button
-              onClick={() => document.getElementById('education-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
-              aria-label="Scroll to next section"
-              data-tooltip="experience"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </button>
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+                aria-label="Scroll to top"
+                data-tooltip="back to top"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+              </button>
+              <button
+                onClick={() => document.getElementById('education-experience')?.scrollIntoView({ behavior: 'smooth' })}
+                className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+                aria-label="Scroll to next section"
+                data-tooltip="experience"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+          </div>
+          
           </div>
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -109,6 +112,7 @@ export default function Home() {
         {/* Experience Section */}
         <section id="education-experience" className="section-accent py-10 sm:py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen">
           <div className="absolute bottom-8 right-8 flex gap-2">
+          <div style={{ bottom: 'calc(env(safe-area-inset-bottom) + 1rem)' }}>
             <button
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
@@ -129,6 +133,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </button>
+            </div>
           </div>
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-3 gap-4 md:gap-10 items-start">
@@ -148,6 +153,7 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="section-secondary py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen">
         <div className="absolute bottom-8 right-8 flex gap-2">
+        <div style={{ bottom: 'calc(env(safe-area-inset-bottom) + 1rem)' }}>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="p-3 bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
@@ -158,6 +164,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
               </svg>
             </button>
+            </div>
           </div>
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 md:mb-8 px-4">get in touch</h2>
