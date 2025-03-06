@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { init, getInstanceByDom } from 'echarts';
+import { init } from 'echarts';
 import type { EChartsOption } from 'echarts';
 
 export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
@@ -11,7 +11,7 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
     textStyle: {
       color: '#fff',
       fontFamily: 'Joyride',
-      fontSize: isMobile ? 14 : 16
+      fontSize: isMobile ? 10 : 16
     },
     top: 'bottom',
     left: 'right',
@@ -19,7 +19,7 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
   tooltip: {
     trigger: 'item',
     textStyle: {
-      fontSize: isMobile ? 12 : 14
+      fontSize: isMobile ? 10 : 14
     }
   },
   series: [{
@@ -31,7 +31,7 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
     emphasis: {
       focus: 'adjacency',
       lineStyle: {
-        width: 10
+        width: isMobile ? 5 : 10
       }
     },
     data: [
@@ -39,21 +39,21 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
       { 
         id: '1',
         name: 'Tarım Kredi ERP',
-        symbolSize: isMobile ? 20 : 50,
+        symbolSize: isMobile ? 15 : 50,
         category: 'projects',
         itemStyle: { color: '#e670a1' },
-        x: 100,
-        y: 300,
+        x: isMobile ? 50 : 100,         
+        y: isMobile ? 150 : 300,
         fixed: true
       },
       { 
         id: '6',
         name: 'MAN Truck & Bus',
-        symbolSize: isMobile ? 20 : 50,
+        symbolSize: isMobile ? 15 : 50,
         category: 'projects',
         itemStyle: { color: '#e670a1' },
-        x: 700,
-        y: 300,
+        x: isMobile ? 300 : 700,
+        y: isMobile ? 150 : 300,
         fixed: true
       },
       // Frontend Technologies
@@ -99,8 +99,8 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
       { name: 'tools' }
     ],
     force: {
-      repulsion: isMobile ? 300 : 400,
-      edgeLength: isMobile ? 200 : 300,
+      repulsion: isMobile ? 200 : 400,
+      edgeLength: isMobile ? 100 : 300,
       gravity: isMobile ? 0.2 : 0.1,
       layoutAnimation: true,
       friction: 0.9,
@@ -112,12 +112,12 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
       position: 'right',
       color: '#fff',
       formatter: '{b}',
-      fontSize: isMobile ? 10 : 12
+      fontSize: isMobile ? 8 : 12
     },
     lineStyle: {
       color: '#fff',
       curveness: 0.3,
-      width: 0.5
+      width: isMobile ? 0.3 : 0.5
     }
   }]
 });
@@ -182,7 +182,13 @@ export default function EChart({ style, className }: EChartProps) {
   return (
     <div
       ref={chartRef}
-      style={{ width: '100%', height: '100%', ...style }}
+      style={{
+        width: '100%',
+        height: '100%',
+        transform: isMobile ? 'scale(0.9)' : 'scale(1)', 
+        transformOrigin: 'center',                      
+        ...style
+      }}
       className={className}
     />
   );

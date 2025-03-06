@@ -78,18 +78,18 @@ export default function Home() {
           </div>
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-10 items-center">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-8">about me</h2>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-8 px-4">about me</h2>
                 <div className="space-y-4">
-                  <p className="text-base sm:text-lg text-foreground/80">
+                  <p className="text-base sm:text-lg text-foreground/80 px-4">
                     hi, i'm begüm zengin! i'm a passionate frontend developer with a strong focus on building efficient and user-friendly web applications.
                   </p>
-                  <p className="text-base sm:text-lg">
+                  <p className="text-base sm:text-lg px-4">
                   with hands-on experience in modern frontend technologies such as angular and react, i enjoy turning complex requirements into intuitive and responsive interfaces.
                   </p>
-                  <p className="text-base sm:text-lg">
+                  <p className="text-base sm:text-lg px-4">
                   i'm fascinated by design and aspire to create amazing user interface designs.
                   </p>
-                  <p className="text-base sm:text-lg">
+                  <p className="text-base sm:text-lg px-4">
                   i thrive in collaborative environments, enjoy problem-solving, and continuously seek opportunities to learn and adapt to new technologies.
                   </p>
                 </div>
@@ -150,9 +150,9 @@ export default function Home() {
             </button>
           </div>
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 md:mb-8">get in touch</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 md:mb-8 px-4">get in touch</h2>
             <div className="max-w-2xl mx-auto">
-              <p className="text-base sm:text-lg text-foreground/80 mb-8 text-center">
+              <p className="text-base sm:text-lg text-foreground/80 mb-8 text-center px-4">
                 feel free to reach out if you'd like to collaborate, discuss exciting projects, or just chat about all things frontend!
               </p>
               <div className="flex justify-center space-x-6">

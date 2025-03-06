@@ -331,10 +331,18 @@ li::before {
 
 .section-primary,
 .section-secondary,
-.section-accent,
 .section-navbar {
   min-height: 100vh;
   padding: 20rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-accent {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
