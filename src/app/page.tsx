@@ -127,7 +127,7 @@ export default function Home() {
                 <p className="text-sm sm:text-md text-foreground/80 text-justify">i've been working as a frontend developer since 2023</p>
                 <p className="text-base sm:text-lg font-catellos text-foreground/80 text-justify">&</p>
                 <p className="text-sm sm:text-md text-foreground/80 text-justify">i love learning about new technologies and concepts</p>
-                <p className="text-sm sm:text-md text-foreground/80 text-center">i'm contributing to man truck & bus and tarım kredi projects @ <a href="https://vbt.com.tr/" target="_blank" rel="noopener noreferrer" className="text-[#e670a1] hover:text-[#21D3EB] transition-colors">vbt software</a></p>
+                <p className="text-sm sm:text-md text-foreground/80 text-center px-4">i'm contributing to man truck & bus and tarım kredi projects @ <a href="https://vbt.com.tr/" target="_blank" rel="noopener noreferrer" className="text-[#e670a1] hover:text-[#21D3EB] transition-colors">vbt software</a></p>
               </div>
               <div className="w-full h-[400px] md:h-[600px] md:col-span-2">
                 <EChart option={experienceChartOption(false)} className="w-full"/>
