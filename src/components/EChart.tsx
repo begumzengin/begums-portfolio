@@ -22,18 +22,6 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
       fontSize: isMobile ? 12 : 14
     }
   },
-  legend: {
-    show: !isMobile,
-    top: '5%',
-    left: 'center',
-    textStyle: {
-      color: '#fff',
-      fontFamily: 'Joyride',
-      fontSize: isMobile ? 12 : 14
-    },
-    z: 100,
-    data: [{ name: 'frontend', itemStyle: { color: '#21D3EB' } }, { name: 'tools', itemStyle: { color: '#B8C0EB' } }]
-  },
   series: [{
     type: 'graph',
     layout: 'force',
@@ -53,14 +41,20 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
         name: 'Tarım Kredi ERP',
         symbolSize: isMobile ? 20 : 50,
         category: 'projects',
-        itemStyle: { color: '#e670a1' }
+        itemStyle: { color: '#e670a1' },
+        x: 100,
+        y: 300,
+        fixed: true
       },
       { 
         id: '6',
         name: 'MAN Truck & Bus',
         symbolSize: isMobile ? 20 : 50,
         category: 'projects',
-        itemStyle: { color: '#e670a1' }
+        itemStyle: { color: '#e670a1' },
+        x: 700,
+        y: 300,
+        fixed: true
       },
       // Frontend Technologies
       { id: '2', name: 'react', symbolSize: isMobile ? 15 : 30, category: 'frontend', itemStyle: { color: '#21D3EB' } },
@@ -105,8 +99,8 @@ export const experienceChartOption = (isMobile: boolean): EChartsOption => ({
       { name: 'tools' }
     ],
     force: {
-      repulsion: isMobile ? 280 : 380,
-      edgeLength: isMobile ? 180 : 280,
+      repulsion: isMobile ? 300 : 400,
+      edgeLength: isMobile ? 200 : 300,
       gravity: isMobile ? 0.2 : 0.1,
       layoutAnimation: true,
       friction: 0.9,
